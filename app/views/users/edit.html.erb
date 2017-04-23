@@ -1,0 +1,20 @@
+<h1>Edit User: <%= current_user.alias %></h1>
+<%= form_for current_user, :url => { :action => "update"}, method: :patch do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <p>
+    First Name: <%= f.text_field :first_name %><br />
+  </p>
+  <p>
+    Last Name: <%= f.text_field :last_name %><br />
+  </p>
+  <p>
+    Alias: <%= f.text_field :alias %><br />
+  </p>
+  <p>
+    Email: <%= f.text_field :email %><br />
+  </p>
+  <p>
+    <%= f.submit "Update User Account" %>
+  </p>
+  <!-- <a href="/users#index">back</a> -->
+<% end %>
